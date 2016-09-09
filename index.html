@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>conpinion-circular-image-button web component</title>
+  <script src='lib/webcomponentsjs/webcomponents-lite.min.js'></script>
+  <link href="build/conpinion-circular-image-button.html" rel="import">
+</head>
+
+<body>
+
+  <h1>conpinion-circular-image-button web component</h1>
+
+  <h2>This component displays a rounded image button</h2>
+
+  <p>
+    <a href="test/index.html">Click here to run the tests...</a>
+  </p>
+
+  <p>
+    <a href="README.md">Click here to read the documentation...</a>
+  </p>
+
+  <p>
+    <a href="CHANGELOG.md">Click here to read the changelog...</a>
+  </p>
+
+  <h2>Demo</h2>
+
+  <template is="dom-bind">
+    <p>
+      <label>Mini:</label>
+      <input type="checkbox" checked="{{mini::change}}">
+    </p>
+
+    <div>
+      <conpinion-circular-image-button mini$="[[mini]]" src="test/img/profile.png"
+                                    elevation="1" on-tap="clicked">
+      </conpinion-circular-image-button>
+    </div>
+    <div>Button clicked: <span>[[buttonClicked]]</span></div>
+  </template>
+
+  <script>
+    var template = document.querySelector('template');
+    template.clicked = function() {
+      this.buttonClicked = "Yes!"
+    };
+  </script>
+
+  <script src="//localhost:35729/livereload.js"></script>
+
+</body>
+
+</html>

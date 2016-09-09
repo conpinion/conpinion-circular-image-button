@@ -1,0 +1,9 @@
+build
+lib
+node_modules
+tmp
+*.sublime-*
+*.log
+*.iml
+.idea
+atlassian-ide-plugin.xml

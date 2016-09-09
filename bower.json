@@ -1,0 +1,44 @@
+{
+  "name": "conpinion-circular-image-button",
+  "description": "This component displays a rounded image button",
+  "version": "0.2.1",
+  "main": "conpinion-circular-image-button.html",
+  "license": "MIT",
+  "ignore": [
+    "bin",
+    "build",
+    "lib",
+    "node_modules",
+    "src",
+    "test",
+    "tmpl",
+    "package.json",
+    "**/.*",
+    "**/*.log",
+    "**/*.sublime-*",
+    "atlassian-ide-plugin.xml"
+  ],
+  "keywords": [
+    "web-components"
+  ],
+  "authors": [
+    "Dirk Grappendorf <dirk.grappendorf@conpinion.de>",
+    "Andreas Haardt <andreas.haardt@conpinion.de>",
+    "Tim Völpel <tim.voelpel@conpinion.de>"
+  ],
+  "homepage": "https://github.com/conpinion/conpinion-circular-image-button",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/conpinion/conpinion-circular-image-button.git"
+  },
+  "dependencies": {
+    "paper-material": "PolymerElements/paper-material#^1.0.0",
+    "paper-button": "PolymerElements/paper-button#^1.0.2"
+  },
+  "devDependencies": {
+    "coffee-script": "^1.10.0",
+    "jquery": "^2.1.4",
+    "web-component-tester": "Polymer/web-component-tester#^3.3.21",
+    "test-fixture": "PolymerElements/test-fixture#^1.0.0"
+  }
+}

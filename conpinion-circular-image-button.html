@@ -1,0 +1,96 @@
+
+<!--
+Copyright (c) 2015 TELCAT MULTICOM GmbH. All rights reserved.
+Copyright (c) 2016 conpinion GbR. All rights reserved.
+
+Element: conpinion-circular-image-button
+Version: 0.2.1
+Description: A Circular image button
+-->
+
+
+<link rel="import" href="../paper-material/paper-material.html">
+<link rel="import" href="../paper-button/paper-button.html">
+<link rel="import" href="../iron-flex-layout/iron-flex-layout.html">
+
+<dom-module id="conpinion-circular-image-button">
+
+  <template>
+
+<style>:host {
+  display: inline-block;
+  position: relative;
+  outline: none;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  z-index: 0;
+  box-sizing: border-box;
+  background: transparent;
+  border-radius: 50%;
+}
+:host #shadow {
+  border-radius: inherit;
+  pointer-events: none;
+  width: 4em;
+  height: 4em;
+}
+:host #image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 4em;
+  height: 4em;
+  border-radius: 50%;
+}
+:host([mini]) #shadow {
+  width: 2em;
+  height: 2em;
+}
+:host([mini]) #image {
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+}
+:host([disabled]) {
+  -webkit-filter: opacity(0.25);
+  pointer-events: none;
+  cursor: auto;
+}
+</style>
+
+    <paper-material id="shadow" elevation="[[elevation]]" animated>
+      <paper-ripple></paper-ripple>
+      <div>
+        <div id="image"></div>
+      </div>
+    </paper-material>
+
+  </template>
+
+<script type="text/javascript">(function() {
+  Polymer({
+    is: 'conpinion-circular-image-button',
+    behaviors: [Polymer.PaperButtonBehavior],
+    properties: {
+      src: {
+        type: String,
+        observer: 'srcChanged'
+      },
+      mini: {
+        type: Boolean,
+        value: true
+      },
+      disabled: {
+        type: Boolean,
+        value: false
+      }
+    },
+    srcChanged: function() {
+      return this.$.image.style.backgroundImage = "url('" + this.src + "')";
+    }
+  });
+
+}).call(this);
+</script>
+
+</dom-module>>

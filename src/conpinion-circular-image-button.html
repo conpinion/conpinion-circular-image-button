@@ -1,0 +1,35 @@
+<!-- build:process -->
+<!--
+<%= copyright %>
+Element: <%= pkg.name %>
+Version: <%= pkg.version %>
+Description: <%= pkg.description %>
+-->
+<!-- /build -->
+
+<link rel="import" href="../lib/paper-material/paper-material.html">
+<link rel="import" href="../lib/paper-button/paper-button.html">
+<link rel="import" href="../lib/iron-flex-layout/iron-flex-layout.html">
+
+<dom-module id="conpinion-circular-image-button">
+
+  <template>
+
+    <!-- build:style inline conpinion-circular-image-button -->
+    <link rel="stylesheet" href="conpinion-circular-image-button.css">
+    <!-- /build -->
+
+    <paper-material id="shadow" elevation="[[elevation]]" animated>
+      <paper-ripple></paper-ripple>
+      <div>
+        <div id="image"></div>
+      </div>
+    </paper-material>
+
+  </template>
+
+  <!-- build:script inline conpinion-circular-image-button -->
+  <script src="conpinion-circular-image-button.js"></script>
+  <!-- /build -->
+
+</dom-module>>

@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>conpinion-circular-image-button mini attribute tests</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <script src="../lib/webcomponentsjs/webcomponents.js"></script>
+  <script src="../lib/web-component-tester/browser.js"></script>
+  <script src="../lib/coffee-script/extras/coffee-script.js"></script>
+  <script src="../lib/test-fixture/test-fixture-mocha.js"></script>
+  <link rel="import" href="../lib/test-fixture/test-fixture.html">
+  <link rel="import" href="../build/conpinion-circular-image-button.html">
+</head>
+
+<body>
+
+  <test-fixture id="element-with-mini">
+    <template>
+      <conpinion-circular-image-button mini></conpinion-circular-image-button>
+    </template>
+  </test-fixture>
+
+  <test-fixture id="element-without-mini">
+    <template>
+      <conpinion-circular-image-button></conpinion-circular-image-button>
+    </template>
+  </test-fixture>
+
+  <script type="text/coffeescript">
+
+    element = null
+
+    describe 'when the mini attribute is set', ->
+
+      beforeEach -> element = fixture 'element-with-mini'
+
+      it 'should have a width of 2 ems', ->
+        style = window.getComputedStyle element.querySelector('div#image')
+        expect(style.width).to.equal '32px'
+
+    describe 'without the mini attribute', ->
+
+      beforeEach -> element = fixture 'element-without-mini'
+
+      it 'should have a width of 4 ems', ->
+        style = window.getComputedStyle element.querySelector('div#image')
+        expect(style.width).to.equal '64px'
+
+  </script>
+
+</body>
+
+</html>
